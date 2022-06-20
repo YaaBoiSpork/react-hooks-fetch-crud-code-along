@@ -1,11 +1,29 @@
 import React, { useState } from "react";
 
-function ItemForm() {
+function ItemForm({onAddItem}) {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("Produce");
 
+  function handleSubmit(e){
+    e.preventDefault();
+    const itemData = {
+      name: name,
+      category: category,
+      isInCart: false,
+    }
+    fetch("http://localhost:4000/items", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemData),
+    })
+      .then((r) => r.json())
+      .then((newItem) => onAddItem(newItem))
+  }
+
   return (
-    <form className="NewItem">
+    <form className="NewItem" onSubmit={handleSubmit}>
       <label>
         Name:
         <input
@@ -26,6 +44,7 @@ function ItemForm() {
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
+          <option value="Other">Other</option>
         </select>
       </label>
 

@@ -35,6 +35,24 @@
       "name": "Cookies",
       "category": "Dessert",
       "isInCart": false
+    },
+    {
+      "name": "Potato Buns",
+      "category": "Other",
+      "isInCart": false,
+      "id": 7
+    },
+    {
+      "name": "Hamburger Meat",
+      "category": "Other",
+      "isInCart": false,
+      "id": 8
+    },
+    {
+      "name": "Milk",
+      "category": "Dairy",
+      "isInCart": false,
+      "id": 11
     }
   ]
 }

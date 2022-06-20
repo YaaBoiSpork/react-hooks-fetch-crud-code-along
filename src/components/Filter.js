@@ -12,6 +12,7 @@ function Filter({ category, onCategoryChange }) {
         <option value="Produce">Produce</option>
         <option value="Dairy">Dairy</option>
         <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
       </select>
     </div>
   );
